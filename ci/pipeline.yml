@@ -1,4 +1,3 @@
-
 resources:
 - name: source-code-from-github
   type: git
@@ -11,5 +10,5 @@ jobs:
   plan:
   - get: source-code-from-github
     trigger: true
-  - task: run-test-and-build-jar-file
+  - task: run-test-and-build-jar
     file: source-code-from-github/ci/test-and-build.yml

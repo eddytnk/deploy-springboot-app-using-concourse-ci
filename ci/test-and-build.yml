@@ -7,7 +7,7 @@ image_resource:
     tag: "8"
 
 inputs:
-- name: source-code
+- name: source-code-from-github
 
 run:
-  path: source-code/ci/test-and-build.sh
+  path: source-code-from-github/ci/test-and-build.sh
