@@ -29,5 +29,9 @@ jobs:
         args:
         - -c
         - |
-          mvn -f source-code-from-github/pom.xml package -Dmaven.repo.local=source-code-from-github/.m2
+          mvn -f source-code-from-github/pom.xml clean package -Dmaven.repo.local=source-code-from-github/.m2
           cp source-code-from-github/target/*.jar built-jar-file
+      #- put: storage
+      #    params:
+      #     file: built-jar-file/*.jar
+      #      name: demo.jar
