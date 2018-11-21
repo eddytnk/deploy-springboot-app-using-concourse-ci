@@ -17,9 +17,17 @@ jobs:
       image_resource:
         type: docker-image
         source:
-          repository: java
-          tag: "8"
+          repository: maven
       inputs:
       - name: source-code-from-github
+      outputs:
+      - name: built-jar-file
+      caches:
+      - path: source-code-from-github/.m2
       run:
-        path: source-code-from-github/ci/test-and-build.sh
+        path: sh
+        args:
+        - -c
+        - |
+          mvn -f source-code-from-github/pom.xml package -Dmaven.repo.local=source-code-from-github/.m2
+          cp source-code-from-github/target/*.jar built-jar-file
