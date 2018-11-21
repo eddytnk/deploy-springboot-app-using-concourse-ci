@@ -1,0 +1,16 @@
+
+resources:
+- name: source-code-from-github
+  type: git
+  source:
+    uri: https://github.com/eddytnk/deploy-springboot-app-using-concourse-ci
+    branch: master
+
+
+jobs:
+- name: test-and-build
+  plan:
+  - get: source-code-from-github
+    trigger: true
+  - task: run-test-and-build-jar-file
+    file: ci/test-and-build.yml
