@@ -7,6 +7,7 @@ resources:
 
 jobs:
 - name: test-and-build
+  public: true
   plan:
   - get: source-code-from-github
     trigger: true
