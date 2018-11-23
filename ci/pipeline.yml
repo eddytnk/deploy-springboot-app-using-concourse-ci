@@ -17,7 +17,8 @@ jobs:
       image_resource:
         type: docker-image
         source:
-          repository: maven
+          repository: java
+          tag: 8
       inputs:
       - name: source-code-from-github
       outputs:
