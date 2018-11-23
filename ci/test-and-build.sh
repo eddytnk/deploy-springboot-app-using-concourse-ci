@@ -2,5 +2,5 @@
 
 set -e -u -
 cd source-code-from-github/
-mvn clean package
-cp ./source-code-from-github/target/*.jar  ./jar-file/
+./mvnw clean package
+cp ./source-code-from-github/target/*.jar  ./jar_file/
