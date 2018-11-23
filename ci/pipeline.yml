@@ -11,7 +11,7 @@ jobs:
   plan:
   - get: source-code-from-github
     trigger: true
-  - task: run-test-and-build-jar-file
+  - task: run-test-and-build-jar
     config:
       platform: linux
       image_resource:
