@@ -22,7 +22,7 @@ jobs:
       inputs:
       - name: source-code-from-github
       outputs:
-      - name: jar_file
+      - name: jar-file
       caches:
       - path: source-code-from-github/.m2
       run:
