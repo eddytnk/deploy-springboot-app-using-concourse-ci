@@ -56,9 +56,10 @@ jobs:
   plan:
   - get: s3-stored-jar
     passed: [test-and-build]
+    trigger: true
   - get: source-code-from-github
   - put: pcf-resource
     params:
-      manifest: source-code-from-github/manifest.yml
+      manifest: source-code-from-github/ci/manifest.yml
 
 

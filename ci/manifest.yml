@@ -1,5 +1,5 @@
-name: springbootConcourseTestApp
-path: target/springboot-concourse-0.0.1-SNAPSHOT.jar
+name: springbootConcourseApp
+path: s3-stored-jar/springboot-concourse-0.0.3-SNAPSHOT.jar
 buildpck: https://github.com/cloudfoundry/java-buildpack.git
 memory: 1G
 env:
