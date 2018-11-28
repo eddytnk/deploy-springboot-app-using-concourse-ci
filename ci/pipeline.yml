@@ -10,7 +10,7 @@ resources:
   source:
     bucket: eddytnk
     region_name: us-east-2
-    regexp: jars/springboot-concourse-0.0.0-SNAPSHOT.jar
+    versioned_file: jars/springboot-concourse-0.0.0-SNAPSHOT.jar
     access_key_id: ((AWSAccessKeyId))
     secret_access_key: ((AWSSecretKey))
 
