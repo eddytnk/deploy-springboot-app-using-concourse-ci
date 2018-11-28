@@ -14,6 +14,16 @@ resources:
     access_key_id: ((AWSAccessKeyId))
     secret_access_key: ((AWSSecretKey))
 
+- name: pcf-resource
+  type: cf
+  source:
+    api: https://api.run.pivotal.io
+    username: ((PCF_EMAIL))
+    password: ((PCF_PASSWORD))
+    organization: ((PCF_ORG))
+    space: ((PCF_SPACE))
+    skip_cert_check: false
+
 jobs:
 - name: test-and-build
   public: true
@@ -40,4 +50,15 @@ jobs:
     - put: s3-stored-jar
       params:
         file: jar-file/*.jar
+
+- name: deploy-app-to-pcf
+  public: true
+  plan:
+  - get: s3-stored-jar
+    passed: [test-and-build]
+  - get: source-code-from-github
+  - put: pcf-resource
+    params:
+      manifest: source-code-from-github/manifest.yml
+
 
