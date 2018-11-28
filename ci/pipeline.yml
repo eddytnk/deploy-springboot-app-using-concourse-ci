@@ -58,6 +58,12 @@ jobs:
     passed: [test-and-build]
     trigger: true
   - get: source-code-from-github
+    #- task: create-some-files
+    #  config:
+     #   inputs:
+      #  - name: s3-stored-jar
+       # outputs:
+        #- name: jar-from-s3
   - put: pcf-resource
     params:
       manifest: source-code-from-github/ci/manifest.yml

@@ -1,5 +1,5 @@
 name: springbootConcourseApp
-path: https://s3.us-east-2.amazonaws.com/eddytnk/jars/springboot-concourse-0.0.3-SNAPSHOT.jar
+path: ../../s3-stored-jar/springboot-concourse-0.0.3-SNAPSHOT.jar
 buildpck: https://github.com/cloudfoundry/java-buildpack.git
 memory: 1G
 env:
