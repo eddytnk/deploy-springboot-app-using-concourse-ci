@@ -10,7 +10,7 @@ resources:
   source:
     bucket: eddytnk
     region_name: us-east-2
-    versioned_file: jars/springboot-concourse-0.0.0-SNAPSHOT.jar
+    regexp: jars/springboot-concourse-(.*)-SNAPSHOT.jar
     access_key_id: ((AWSAccessKeyId))
     secret_access_key: ((AWSSecretKey))
 
@@ -20,6 +20,7 @@ jobs:
   plan:
     - get: source-code-from-github
       trigger: true
+    - get: s3-stored-jar
     - task: run-test-and-build-jar-file
       config:
         platform: linux
