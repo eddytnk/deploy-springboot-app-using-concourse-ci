@@ -5,6 +5,15 @@ resources:
     uri: https://github.com/eddytnk/deploy-springboot-app-using-concourse-ci
     branch: master
 
+- name: s3-stored-jar
+  type: s3
+  source:
+    bucket: eddytnk
+    region_name: us-east-1
+    # versioned_file: springboot-concourse-0.0.1-SNAPSHOT.jar
+    access_key_id: ((AWSAccessKeyId))
+    secret_access_key: ((AWSSecretKey))
+
 jobs:
 - name: test-and-build
   public: true
@@ -27,3 +36,7 @@ jobs:
       - path: source-code-from-github/.m2
       run:
         path: ./source-code-from-github/ci/test-and-build.sh
+  - put: s3-stored-jar
+      params:
+        file: jar-file/*.jar
+        name: springboot-concourse.jar
