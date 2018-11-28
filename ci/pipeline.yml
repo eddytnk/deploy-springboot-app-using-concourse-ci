@@ -40,5 +40,4 @@ jobs:
     - put: s3-stored-jar
       params:
         file: jar-file/*.jar
-        name: springboot-concourse.jar
 
