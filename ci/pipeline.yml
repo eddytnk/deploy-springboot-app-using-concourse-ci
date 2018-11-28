@@ -11,6 +11,7 @@ resources:
     bucket: eddytnk
     region_name: us-east-2
     #versioned_file: springboot-concourse-0.0.1-SNAPSHOT.jar
+    regexp: jars/springboot-concourse-*.jar
     access_key_id: ((AWSAccessKeyId))
     secret_access_key: ((AWSSecretKey))
 
