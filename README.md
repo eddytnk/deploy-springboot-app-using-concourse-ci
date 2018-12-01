@@ -6,6 +6,8 @@ The CI is divided into two phases (Jobs).
 1. Test and Build Job
 2. Deploy App to PCF Job 
 
+![Screenshot](https://raw.githubusercontent.com/eddytnk/deploy-springboot-app-using-concourse-ci/master/ci/screenshot.png)
+
 ## Test and Build
 During this job, the Java application is being tested and archived in .jar file then send to s3 bucket
 
